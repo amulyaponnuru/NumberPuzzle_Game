@@ -54,57 +54,13 @@ class CustomNumberPuzzleControl extends NumberPuzzleControl {
 				break;
 			}
 		}
-		if (emptyCellId == 5 || emptyCellId == 6 || emptyCellId == 9 || emptyCellId == 10) {
-			if (buttonClickedId == emptyCellId + 4 || buttonClickedId == emptyCellId - 4
-					|| buttonClickedId == emptyCellId + 1 || buttonClickedId == emptyCellId - 1) {
-				swapButton(buttons[emptyCellId], buttonClicked);
-				emptyCellId = buttonClickedId;
-			}
-		} else if (emptyCellId == 4 || emptyCellId == 8) {
-			if (buttonClickedId == emptyCellId + 4 || buttonClickedId == emptyCellId - 4
-					|| buttonClickedId == emptyCellId + 1) {
-				swapButton(buttons[emptyCellId], buttonClicked);
-				emptyCellId = buttonClickedId;
-			}
-		} else if (emptyCellId == 1 || emptyCellId == 2) {
-			if (buttonClickedId == emptyCellId + 4 || buttonClickedId == emptyCellId - 1
-					|| buttonClickedId == emptyCellId + 1) {
-				swapButton(buttons[emptyCellId], buttonClicked);
-				emptyCellId = buttonClickedId;
-			}
-		} else if (emptyCellId == 7 || emptyCellId == 11) {
-			if (buttonClickedId == emptyCellId + 4 || buttonClickedId == emptyCellId - 4
-					|| buttonClickedId == emptyCellId - 1) {
-				swapButton(buttons[emptyCellId], buttonClicked);
-				emptyCellId = buttonClickedId;
-			}
-		} else if (emptyCellId == 13 || emptyCellId == 14) {
-			if (buttonClickedId == emptyCellId - 4 || buttonClickedId == emptyCellId - 1
-					|| buttonClickedId == emptyCellId + 1) {
-				swapButton(buttons[emptyCellId], buttonClicked);
-				emptyCellId = buttonClickedId;
-			}
-		} else if (emptyCellId == 0) {
-			if (buttonClickedId == 1 || buttonClickedId == 4) {
-				swapButton(buttons[emptyCellId], buttonClicked);
-				emptyCellId = buttonClickedId;
-			}
-		} else if (emptyCellId == 3) {
-			if (buttonClickedId == 2 || buttonClickedId == 7) {
-				swapButton(buttons[emptyCellId], buttonClicked);
-				emptyCellId = buttonClickedId;
-			}
-		} else if (emptyCellId == 12) {
-			if (buttonClickedId == 8 || buttonClickedId == 13) {
-				swapButton(buttons[emptyCellId], buttonClicked);
-				emptyCellId = buttonClickedId;
-			}
-		} else {
-			if (buttonClickedId == 11 || buttonClickedId == 14) {
-				swapButton(buttons[emptyCellId], buttonClicked);
-				emptyCellId = buttonClickedId;
-			}
+		if ((buttonClickedId + 1 == emptyCellId && (buttonClickedId + 1) % 4 != 0)
+				|| (buttonClickedId - 1 == emptyCellId && (buttonClickedId % 4 != 0))
+				|| buttonClickedId + 4 == emptyCellId || buttonClickedId - 4 == emptyCellId) {
+			swapButton(buttons[emptyCellId], buttonClicked);
+			emptyCellId = buttonClickedId;
 		}
+
 		System.out.println(emptyCellId);
 		return emptyCellId;
 	}
@@ -145,3 +101,55 @@ class CustomNumberPuzzleControl extends NumberPuzzleControl {
 //Thinking in objects
 //database essentials
 //web fundamentals, html css, javascript
+
+//if (emptyCellId == 5 || emptyCellId == 6 || emptyCellId == 9 || emptyCellId == 10) {
+//if (buttonClickedId == emptyCellId + 4 || buttonClickedId == emptyCellId - 4
+//		|| buttonClickedId == emptyCellId + 1 || buttonClickedId == emptyCellId - 1) {
+//	swapButton(buttons[emptyCellId], buttonClicked);
+//	emptyCellId = buttonClickedId;
+//}
+//} else if (emptyCellId == 4 || emptyCellId == 8) {
+//if (buttonClickedId == emptyCellId + 4 || buttonClickedId == emptyCellId - 4
+//		|| buttonClickedId == emptyCellId + 1) {
+//	swapButton(buttons[emptyCellId], buttonClicked);
+//	emptyCellId = buttonClickedId;
+//}
+//} else if (emptyCellId == 1 || emptyCellId == 2) {
+//if (buttonClickedId == emptyCellId + 4 || buttonClickedId == emptyCellId - 1
+//		|| buttonClickedId == emptyCellId + 1) {
+//	swapButton(buttons[emptyCellId], buttonClicked);
+//	emptyCellId = buttonClickedId;
+//}
+//} else if (emptyCellId == 7 || emptyCellId == 11) {
+//if (buttonClickedId == emptyCellId + 4 || buttonClickedId == emptyCellId - 4
+//		|| buttonClickedId == emptyCellId - 1) {
+//	swapButton(buttons[emptyCellId], buttonClicked);
+//	emptyCellId = buttonClickedId;
+//}
+//} else if (emptyCellId == 13 || emptyCellId == 14) {
+//if (buttonClickedId == emptyCellId - 4 || buttonClickedId == emptyCellId - 1
+//		|| buttonClickedId == emptyCellId + 1) {
+//	swapButton(buttons[emptyCellId], buttonClicked);
+//	emptyCellId = buttonClickedId;
+//}
+//} else if (emptyCellId == 0) {
+//if (buttonClickedId == 1 || buttonClickedId == 4) {
+//	swapButton(buttons[emptyCellId], buttonClicked);
+//	emptyCellId = buttonClickedId;
+//}
+//} else if (emptyCellId == 3) {
+//if (buttonClickedId == 2 || buttonClickedId == 7) {
+//	swapButton(buttons[emptyCellId], buttonClicked);
+//	emptyCellId = buttonClickedId;
+//}
+//} else if (emptyCellId == 12) {
+//if (buttonClickedId == 8 || buttonClickedId == 13) {
+//	swapButton(buttons[emptyCellId], buttonClicked);
+//	emptyCellId = buttonClickedId;
+//}
+//} else {
+//if (buttonClickedId == 11 || buttonClickedId == 14) {
+//	swapButton(buttons[emptyCellId], buttonClicked);
+//	emptyCellId = buttonClickedId;
+//}
+//}
